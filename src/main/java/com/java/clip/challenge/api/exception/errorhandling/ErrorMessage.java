@@ -16,7 +16,11 @@ public class ErrorMessage {
 	public static final String NOT_FOUND_RESOURCE = "%s was not found with the given id: %s";
 
 	public static final String CUSTOMER = "Customer";
-
+	
+	public static final String PRODUCT = "Product";
+	public static final String ALREADY_EXISTING_PRODUCT_CODE = "product code %s is already in use, try with another one.";
+	public static final String CODE = "code";
+	
 	public static final String INVALID_CREDENTIALS = "Invalid login credentials.";
 	public static final String UNAVAILABLE_ENTITY = "This %s is currently unavailable.";
 	public static final String VALIDATION_ERROR = "One or more fields are invalid";

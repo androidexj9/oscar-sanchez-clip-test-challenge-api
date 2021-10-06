@@ -15,17 +15,11 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
-
 	private Integer type;
-
 	private String firstName;
-
 	private String lastName;
-
 	private String email;
-
 	private String password;
-
 	private Integer status;
 
 	public String getId() {

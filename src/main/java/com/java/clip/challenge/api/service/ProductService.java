@@ -13,6 +13,8 @@ public interface ProductService {
 	List<ProductDTO> getAllProducts();
 
 	ProductDTO getProductById(String id);
+	
+	List<ProductDTO> getProductByCode(String code);
 
 	NewProductResponse createProduct(NewProductRequest request);
 
