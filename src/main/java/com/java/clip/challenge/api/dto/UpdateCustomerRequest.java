@@ -1,31 +1,18 @@
-package com.java.clip.challenge.api.model;
+package com.java.clip.challenge.api.dto;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import lombok.Getter;
+import lombok.Setter;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+@Getter
+@Setter
+public class UpdateCustomerRequest {
 
-import lombok.Data;
-
-@Document(collection = "customers") 
-@Data
-public class Customer {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
-
 	private Integer type;
-
 	private String firstName;
-
 	private String lastName;
-
 	private String email;
-
 	private String password;
-
 	private Integer status;
 
 	public String getId() {
@@ -83,4 +70,5 @@ public class Customer {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
+
 }

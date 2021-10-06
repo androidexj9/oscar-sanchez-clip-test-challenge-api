@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class CustomerDTO {
 
 	@ApiModelProperty(example = "615cfc3f18e6c4ce6d169279", value = "Unique Identifier")
-	private String _id;
+	private String id;
 
 	@ApiModelProperty(example = "2", value = "Value that allows to identify if the customer is admin or normal customer")
 	private Integer type;

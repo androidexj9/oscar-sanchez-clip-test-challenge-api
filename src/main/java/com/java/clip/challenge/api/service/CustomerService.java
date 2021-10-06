@@ -2,18 +2,28 @@ package com.java.clip.challenge.api.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+
 import com.java.clip.challenge.api.dto.CustomerDTO;
+import com.java.clip.challenge.api.dto.NewCustomerRequest;
+import com.java.clip.challenge.api.dto.NewCustomerResponse;
+import com.java.clip.challenge.api.dto.UpdateCustomerRequest;
+import com.java.clip.challenge.api.dto.UpdateCustomerResponse;
 
 public interface CustomerService {
 
-	public List<CustomerDTO> getAllCustomers();
+	List<CustomerDTO> getAllCustomers();
 	
-	public void getCustomerById();
+	CustomerDTO getCustomerById(String id);
 	
-	public void createCustomer();
+	List<CustomerDTO> getCustomerByEmail(String email);
 	
-	public void updateCustomerById();
+	NewCustomerResponse createCustomer(NewCustomerRequest request);
 	
-	public void deleteCustomerById();
+	UpdateCustomerResponse updateCustomerById(UpdateCustomerRequest request, String id);
+	
+	void deleteCustomerById(String id);
+
+	ResponseEntity<String> validateToken(String id);
 
 }
