@@ -2,10 +2,10 @@ package com.java.clip.challenge.api.mapper;
 
 import org.springframework.stereotype.Component;
 
-import com.java.clip.challenge.api.dto.CustomerDTO;
 import com.java.clip.challenge.api.dto.LoginResponse;
-import com.java.clip.challenge.api.dto.NewCustomerResponse;
-import com.java.clip.challenge.api.dto.UpdateCustomerResponse;
+import com.java.clip.challenge.api.dto.customer.CustomerDTO;
+import com.java.clip.challenge.api.dto.customer.NewCustomerResponse;
+import com.java.clip.challenge.api.dto.customer.UpdateCustomerResponse;
 import com.java.clip.challenge.api.model.Customer;
 
 import ma.glasnost.orika.MapperFactory;

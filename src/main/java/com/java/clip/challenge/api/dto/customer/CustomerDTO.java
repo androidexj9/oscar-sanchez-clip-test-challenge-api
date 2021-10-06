@@ -1,4 +1,4 @@
-package com.java.clip.challenge.api.dto;
+package com.java.clip.challenge.api.dto.customer;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

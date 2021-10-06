@@ -18,11 +18,11 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.stereotype.Service;
 
-import com.java.clip.challenge.api.dto.CustomerDTO;
-import com.java.clip.challenge.api.dto.NewCustomerRequest;
-import com.java.clip.challenge.api.dto.NewCustomerResponse;
-import com.java.clip.challenge.api.dto.UpdateCustomerRequest;
-import com.java.clip.challenge.api.dto.UpdateCustomerResponse;
+import com.java.clip.challenge.api.dto.customer.CustomerDTO;
+import com.java.clip.challenge.api.dto.customer.NewCustomerRequest;
+import com.java.clip.challenge.api.dto.customer.NewCustomerResponse;
+import com.java.clip.challenge.api.dto.customer.UpdateCustomerRequest;
+import com.java.clip.challenge.api.dto.customer.UpdateCustomerResponse;
 import com.java.clip.challenge.api.exception.BadRequestException;
 import com.java.clip.challenge.api.exception.NotFoundException;
 import com.java.clip.challenge.api.exception.UnauthorizedException;

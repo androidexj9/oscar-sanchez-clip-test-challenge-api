@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import com.java.clip.challenge.api.dto.CustomerDTO;
-import com.java.clip.challenge.api.dto.NewCustomerRequest;
-import com.java.clip.challenge.api.dto.NewCustomerResponse;
-import com.java.clip.challenge.api.dto.UpdateCustomerRequest;
-import com.java.clip.challenge.api.dto.UpdateCustomerResponse;
+import com.java.clip.challenge.api.dto.customer.CustomerDTO;
+import com.java.clip.challenge.api.dto.customer.NewCustomerRequest;
+import com.java.clip.challenge.api.dto.customer.NewCustomerResponse;
+import com.java.clip.challenge.api.dto.customer.UpdateCustomerRequest;
+import com.java.clip.challenge.api.dto.customer.UpdateCustomerResponse;
 
 public interface CustomerService {
 
