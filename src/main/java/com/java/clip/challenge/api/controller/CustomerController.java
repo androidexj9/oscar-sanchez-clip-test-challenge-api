@@ -101,15 +101,15 @@ public class CustomerController {
 	 * @param id String
 	 * @return UpdateCustomerResponse
 	 */
-	@ResponseStatus(HttpStatus.OK)
 	@PutMapping(value = "/customers/{id}", consumes = "application/json", produces = "application/json")
+	@ResponseStatus(HttpStatus.OK)
 	@ApiOperation(value = "Update a Customer in the application")
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Resource update successfully"),
 							@ApiResponse(code = 401, message = "Unauthorized"), 
 							@ApiResponse(code = 403, message = "Access prohibited"),
 							@ApiResponse(code = 404, message = "Not Found"), })
-	public UpdateCustomerResponse putCustomer(@RequestBody UpdateCustomerRequest request, @PathVariable String id) {
-		log.info("CustomerController.putCustomer - Calling update customer operation");
+	public UpdateCustomerResponse updateCustomerById(@RequestBody UpdateCustomerRequest request, @PathVariable String id) {
+		log.info("CustomerController.updateCustomerById - Calling update customer operation");
 		return customerService.updateCustomerById(request, id);
 	}
 	
