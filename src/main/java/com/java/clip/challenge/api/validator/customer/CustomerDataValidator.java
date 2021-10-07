@@ -36,7 +36,7 @@ public class CustomerDataValidator implements Validator<Customer> {
 	public void validate(Customer customer) {
 		List<ErrorDetails> errorDetails = new ArrayList<>();
 		validateType(customer.getType(), errorDetails);
-		validateFirstName(customer.getFirstName(), errorDetails);
+		validateName(customer.getName(), errorDetails);
 		validateLastName(customer.getLastName(), errorDetails);
 		validateEmailFormat(customer.getEmail(), errorDetails);
 		validatePassword(customer.getPassword(), errorDetails);
@@ -62,8 +62,8 @@ public class CustomerDataValidator implements Validator<Customer> {
 		}
 	}
 
-	private void validateFirstName(String firstName, List<ErrorDetails> errorDetails) {
-		if (!isValidString(firstName)) {
+	private void validateName(String name, List<ErrorDetails> errorDetails) {
+		if (!isValidString(name)) {
 			ErrorDetails error = new ErrorDetails();
 			error.setErrorMessage(String.format(MISSING_REQUIRED_INPUT, FIRST_NAME));
 			error.setFieldName(FIRST_NAME);
@@ -83,7 +83,6 @@ public class CustomerDataValidator implements Validator<Customer> {
 	}
 
 	private void validateEmailFormat(String email, List<ErrorDetails> errorDetails) {
-
 		if (!isValidString(email)) {
 			ErrorDetails error = new ErrorDetails();
 			error.setErrorMessage(String.format(MISSING_REQUIRED_INPUT, EMAIL));

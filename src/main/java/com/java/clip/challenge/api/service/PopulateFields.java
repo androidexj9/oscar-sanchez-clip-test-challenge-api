@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PopulateFields {
 	
 	public static void setLetterCases(Customer request){
-		request.setFirstName(request.getFirstName().toLowerCase());
+		request.setName(request.getName().toLowerCase());
 		request.setLastName(request.getLastName().toLowerCase());
 		request.setEmail(request.getEmail().toLowerCase());
 	}

@@ -14,7 +14,7 @@ public class CustomerDataValidatorTest {
 	@Test
 	public void itShouldThrowErrorMessagesInTypeField() {
 		
-		this.customer.setFirstName("Owen");
+		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setPassword("HelloWorld123");
@@ -64,21 +64,21 @@ public class CustomerDataValidatorTest {
 		this.customer.setStatus(0);
 		
 		assertAll(() -> {
-			this.customer.setFirstName(null);
+			this.customer.setName(null);
 			Exception exception = assertThrows(BadRequestException.class, () -> {
 				CustomerDataValidator customerDataValidator = new CustomerDataValidator();
 				customerDataValidator.validate(customer);
 			});
 			assertEquals(VALIDATION_ERROR, exception.getMessage());
 		}, () -> {
-			this.customer.setFirstName("");
+			this.customer.setName("");
 			Exception exception = assertThrows(BadRequestException.class, () -> {
 				CustomerDataValidator customerDataValidator = new CustomerDataValidator();
 				customerDataValidator.validate(customer);
 			});
 			assertEquals(VALIDATION_ERROR, exception.getMessage());
 		}, () -> {
-			this.customer.setFirstName("   ");
+			this.customer.setName("   ");
 			Exception exception = assertThrows(BadRequestException.class, () -> {
 				CustomerDataValidator customerDataValidator = new CustomerDataValidator();
 				customerDataValidator.validate(customer);
@@ -90,7 +90,7 @@ public class CustomerDataValidatorTest {
 	@Test
 	public void itShouldThrowErrorMessagesInLastNameField() {
 		this.customer.setType(2);
-		this.customer.setFirstName("Owen");
+		this.customer.setName("Owen");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setPassword("HelloWorld123");
 		this.customer.setStatus(0);
@@ -121,7 +121,7 @@ public class CustomerDataValidatorTest {
 	@Test
 	public void itShouldThrowErrorMessagesInEmailField() {
 		this.customer.setType(1);
-		this.customer.setFirstName("Owen");
+		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setPassword("HelloWorld123");
 		this.customer.setStatus(0);
@@ -166,7 +166,7 @@ public class CustomerDataValidatorTest {
 	@Test
 	public void itShouldThrowErrorMessagesPasswordField() {
 		this.customer.setType(2);
-		this.customer.setFirstName("Owen");
+		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setStatus(0);
@@ -218,7 +218,7 @@ public class CustomerDataValidatorTest {
 	@Test
 	public void itShouldThrowErrorMessagesInStatusField() {
 		this.customer.setType(1);
-		this.customer.setFirstName("Owen");
+		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setPassword("HelloWorld123");

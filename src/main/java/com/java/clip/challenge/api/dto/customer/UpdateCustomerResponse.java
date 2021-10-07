@@ -9,7 +9,7 @@ public class UpdateCustomerResponse {
 	
     private String id;
     private Integer type;
-    private String firstName;
+    private String name;
     private String lastName;
     private String email;
     private Integer status;

@@ -20,7 +20,6 @@ import com.java.clip.challenge.api.dto.product.UpdateProductRequest;
 import com.java.clip.challenge.api.dto.product.UpdateProductResponse;
 import com.java.clip.challenge.api.exception.NotFoundException;
 import com.java.clip.challenge.api.mapper.ProductMapping;
-import com.java.clip.challenge.api.model.Customer;
 import com.java.clip.challenge.api.model.Product;
 import com.java.clip.challenge.api.repository.ProductRepository;
 import com.java.clip.challenge.api.validator.product.NewProductValidator;

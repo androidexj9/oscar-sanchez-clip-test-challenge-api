@@ -13,8 +13,8 @@ public class NewCustomerRequest {
 	@ApiModelProperty(example = "2", value = "Value that allows to identify if the customer is admin or normal customer")
 	private Integer type;
 
-	@ApiModelProperty(example = "Oscar", value = "First name of the customer")
-	private String firstName;
+	@ApiModelProperty(example = "Oscar", value = "Name of the customer")
+	private String name;
 
 	@ApiModelProperty(example = "Sánchez", value = "Last name of the customer")
 	private String lastName;
@@ -36,12 +36,12 @@ public class NewCustomerRequest {
 		this.type = type;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getLastName() {

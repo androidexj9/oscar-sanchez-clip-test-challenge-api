@@ -18,8 +18,8 @@ public class CustomerDTO {
 	@ApiModelProperty(example = "2", value = "Value that allows to identify if the customer is admin or normal customer")
 	private Integer type;
 
-	@ApiModelProperty(example = "Oscar", value = "First name of the customer")
-	private String firstName;
+	@ApiModelProperty(example = "Oscar", value = "name of the customer")
+	private String name;
 
 	@ApiModelProperty(example = "Sánchez", value = "Last name of the customer")
 	private String lastName;
