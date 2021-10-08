@@ -1,6 +1,5 @@
 package com.java.clip.challenge.api.service;
 
-import static com.java.clip.challenge.api.exception.errorhandling.ErrorMessage.CUSTOMER;
 import static com.java.clip.challenge.api.exception.errorhandling.ErrorMessage.NOT_FOUND_RESOURCE;
 import static com.java.clip.challenge.api.exception.errorhandling.ErrorMessage.PRODUCT;
 
@@ -165,7 +164,7 @@ public class ProductServiceImpl implements ProductService {
 		// 2. Get Product By Id from productRepository
 		Optional<Product> userFoundById = productRepository.findById(id);
 		if (!userFoundById.isPresent()) {
-			throw new NotFoundException(String.format(NOT_FOUND_RESOURCE, CUSTOMER, id));
+			throw new NotFoundException(String.format(NOT_FOUND_RESOURCE, PRODUCT, id));
 		}
 
 		// 3. Delete Product By ID from productRepository
