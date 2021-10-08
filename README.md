@@ -1,4 +1,4 @@
-# Clip Code Challenge on API project
+# Clip Code Challenge - API project
 
 Created on 10/07/2021
 
@@ -9,19 +9,7 @@ Created on 10/07/2021
 * $ mvn clean install
 * $ mvn spring-boot:run
 
-## Development team and contact
-
-### Contributors
-
-| Developer | Contact |
-| ----------- | ----------- |
-| Oscar A. Sánchez | androidedj9@gmail.com |
-
-## License
-
-Free
-
-### Created with
+### Tools
 
 | Technology | Usage |
 | ---------- | ---------- |
@@ -35,3 +23,13 @@ Free
 | Heroku | Platform as a Service |
 | Eclipse | JAVA IDE |
 | MongoCompass | MongoD BGUI  |
+
+## Development team and contact
+
+### Contributors
+
+| Developer | Contact |
+| ----------- | ----------- |
+| Oscar A. Sánchez | androidedj9@gmail.com |
+
+## License
