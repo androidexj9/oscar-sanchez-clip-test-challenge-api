@@ -22,7 +22,7 @@ Created on 10/07/2021
 | MongoDB | NoSQL Database |
 | Heroku | Platform as a Service |
 | Eclipse | JAVA IDE |
-| MongoCompass | MongoD BGUI  |
+| MongoCompass | MongoDB GUI  |
 
 ## Development team and contact
 
@@ -33,3 +33,4 @@ Created on 10/07/2021
 | Oscar A. Sánchez | androidedj9@gmail.com |
 
 ## License
+-
