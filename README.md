@@ -4,6 +4,10 @@ Created on 10/07/2021
 
 **oscar-sanchez-clip-test-challenge-api** is an REST API with spring-boot Microservices for **Clip Code Challenge API Project**
 
+GitHub - https://github.com/androidexj9/oscar-sanchez-clip-test-challenge-api
+
+Heroku App PROD - https://clip-test-challenge-api.herokuapp.com/swagger-ui.html
+
 ## Built & Run
 
 * $ mvn clean install
