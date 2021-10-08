@@ -1,0 +1,42 @@
+package com.java.clip.challenge.api.security;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.test.context.TestPropertySource;
+
+@TestPropertySource("classpath:application.properties ")
+public class RsaPasswordEncoderTest {
+	
+	@InjectMocks
+	private RsaPasswordEncoder rsaPasswordEncoder;
+	
+	@Value("${clip.enc.key.public}")
+	private String PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt11+BTT9iuYCw8srSHH23MyK8A9052WeGQOtUUVCVSju7jdpE70D7Sd2FDh0kfJBd8YV5EgXYRTgPIGIo/azqUHwi6ga0l/CQqnzfrbzVGzs5GG46uDiIbkTy0ZLgPyuWx2um1mzYCyGDMGOcnipl3O9Em2ynkfgbZWvHPRMDUhYve3c+/SI5b4J2L9Be1J5rpNFz254d10diULe+QxaLtJn0Mokh7o5ABy8GTsTXMtDogXjcQARDoFS+pbCNfIzasU14sSMlejkTrqerZLHg8QX436ap8ZR2btAiBGcppAZbW+Jz5c7LHx5cu8ZqEagS61i7KVyubA5S6HZMhctDQIDAQAB";
+
+	@Value("${clip.enc.key.private}")
+	private String PRIVATE_KEY = "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC3XX4FNP2K5gLDyytIcfbczIrwD3TnZZ4ZA61RRUJVKO7uN2kTvQPtJ3YUOHSR8kF3xhXkSBdhFOA8gYij9rOpQfCLqBrSX8JCqfN+tvNUbOzkYbjq4OIhuRPLRkuA/K5bHa6bWbNgLIYMwY5yeKmXc70SbbKeR+Btla8c9EwNSFi97dz79IjlvgnYv0F7Unmuk0XPbnh3XR2JQt75DFou0mfQyiSHujkAHLwZOxNcy0OiBeNxABEOgVL6lsI18jNqxTXixIyV6OROup6tkseDxBfjfpqnxlHZu0CIEZymkBltb4nPlzssfHly7xmoRqBLrWLspXK5sDlLodkyFy0NAgMBAAECggEAH3FSuMXbbEQA2V4vb97K/BW/BWdBHqTYNWXiBHuh4kSApCywQgg5ciNAJjuAEb6+5zD6dAjAqY8Q3I9BxQv6xt1dyDTtVIHDJ/dIn8PzedirzoXLVct2O14nPMYzEE1EAK/YTx9UmPtJiUpviMWUHzpjg5N3+5hLrb7rJkXl/KjO726NKoXdvlOluB8IGMXl4y5Q3XmryYUNhEBKT6AaAxKog2srxrbbrUDDWJaqqVVsA3u0hrMYXRGbFBPIQlaiNCGYiaDxmlaMgYHTIGlGa46dtR/+5feyVwauCEFiQYcppxi+yHxNpy8xXUm4AppmdEE5NEds8DprcBhOcMPCqQKBgQDbPW7nAmC5jeA345lsjJToXTqX6jmyL6LzRXVc+2Jq/eBTWOuhiuCvuWuwJVJa/91TAPVLb3hCDVe5jrQNcUOv+yL5OMYZoK2mS+0K67ANjiyZ5Hmw3AzvJjYwDL4NDf3Y8tZYyJ6bI4h6tp5in88PL22pjCTzvn87CjmzuNQC7wKBgQDWHC9mZEzeDfuGJspvHG/fkJQiNsqXdpbJgwtGIJlEixfQFNRexTT3NY0WIJpUOQbI7RCX84G5lnZdMt7qwPiUxuKY/FUHrmHy4bgap39XfGEcUnIejgXT5pGpCjcHZbHAlj58II0ONcO8HcnUI23WqkQQi0Sl/Pua1R4CL6IfwwKBgADYqt3vb2on9w6gLU5y+HwxJ/HAMLrUXj+sK/jQ659YHY6U0EwOWjGzeIv0iO3bAQK6BThmVMOEg6suttk6b7V1NbxakME2kpUKw/5/zG0w+FEbxbB+GPqvXhQvaGhqfmlg/pzXIW2d5H/8xn3A+i6n0zeNV/Ms8BbNQk3ET+U3AoGBALQdE7bD63HlO1DX8vVTa70bJ7I8e2K9DQ3JokNFCwoBJHAUBa8PoIXRU7VoicsOCeoemxXob5mKvFmcgK/k03h8coSVyIXkqVsjjLdHbjVPWXX02TFg8gAW9zPHdxFO+B/1g+zxiReKHPVz7aP6hdzOcOGl9oLX9WSDoXHfVjf3AoGBALvuheJG/3F3y7QwWCga3EsdGWhPL/0R0bwlEq4pThXxckzdRLeHwIY3pCr69HHZZVihzMvTyqA3dOHKNDkRpPm6/T/ZNnLYN9Sj1kq5CTtOLWOezi7qmspdirUH+fMrv+/lhY28JDs9H3G/BlL3CKn3JFpaDolM4fZzuHAou+Tm";
+	
+	@SuppressWarnings("deprecation")
+	@Before
+	public void setup() {
+		MockitoAnnotations.initMocks(this);
+		rsaPasswordEncoder = new RsaPasswordEncoder(PUBLIC_KEY, PRIVATE_KEY);
+	}
+
+	@Test
+	public void testEncryptAndDecrypt() {
+		// Given
+		String originalPassword = "PasswordEnncrypted4";
+		String passwordEncrypted = rsaPasswordEncoder.encode(originalPassword);
+		String passwordDecrypted = rsaPasswordEncoder.decode(passwordEncrypted);
+		
+		// Assertions
+		assertEquals(originalPassword, passwordDecrypted);
+	}
+
+}

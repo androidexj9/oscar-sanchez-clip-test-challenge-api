@@ -13,13 +13,14 @@ public class CustomerDataValidatorTest {
 
 	@Test
 	public void itShouldThrowErrorMessagesInTypeField() {
-		
+		// Given
 		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setPassword("HelloWorld123");
 		this.customer.setStatus(0);
 		
+		// Assertions
 		assertAll(() -> {
 			// Check the message when the type field is null
 			this.customer.setType(null);
@@ -57,12 +58,14 @@ public class CustomerDataValidatorTest {
 
 	@Test
 	public void itShouldThrowErrorMessagesInFirstNameField() {
+		// Given
 		this.customer.setType(1);
 		this.customer.setLastName("Ramirez");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setPassword("HelloWorld123");
 		this.customer.setStatus(0);
 		
+		// Assertions
 		assertAll(() -> {
 			this.customer.setName(null);
 			Exception exception = assertThrows(BadRequestException.class, () -> {
@@ -89,11 +92,14 @@ public class CustomerDataValidatorTest {
 
 	@Test
 	public void itShouldThrowErrorMessagesInLastNameField() {
+		// Given
 		this.customer.setType(2);
 		this.customer.setName("Owen");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setPassword("HelloWorld123");
 		this.customer.setStatus(0);
+		
+		// Assertions
 		assertAll(() -> {
 			this.customer.setLastName(null);
 			Exception exception = assertThrows(BadRequestException.class, () -> {
@@ -120,11 +126,14 @@ public class CustomerDataValidatorTest {
 
 	@Test
 	public void itShouldThrowErrorMessagesInEmailField() {
+		// Given
 		this.customer.setType(1);
 		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setPassword("HelloWorld123");
 		this.customer.setStatus(0);
+		
+		// Assertions
 		assertAll(() -> {
 			this.customer.setEmail(null);
 			Exception exception = assertThrows(BadRequestException.class, () -> {
@@ -165,11 +174,14 @@ public class CustomerDataValidatorTest {
 
 	@Test
 	public void itShouldThrowErrorMessagesPasswordField() {
+		// Given
 		this.customer.setType(2);
 		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setStatus(0);
+		
+		// Assertions
 		assertAll(() -> {
 			this.customer.setPassword(null);
 			Exception errorMessagePassword = assertThrows(BadRequestException.class, () -> {
@@ -217,11 +229,14 @@ public class CustomerDataValidatorTest {
 
 	@Test
 	public void itShouldThrowErrorMessagesInStatusField() {
+		// Given
 		this.customer.setType(1);
 		this.customer.setName("Owen");
 		this.customer.setLastName("Ramirez");
 		this.customer.setEmail("owen@example.com");
 		this.customer.setPassword("HelloWorld123");
+		
+		// Assertions
 		assertAll(() -> {
 			this.customer.setStatus(null);
 			Exception errorMessageStatus = assertThrows(BadRequestException.class, () -> {

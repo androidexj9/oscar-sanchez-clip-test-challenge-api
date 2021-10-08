@@ -46,7 +46,10 @@ public class CustomerControllerTest {
 
 	@Test
 	public void itShouldGetAllCustomers() throws Exception {
+		// Given
 		String getMapping = "/customers";
+		
+		// Then
 		when(customerService.getAllCustomers())
 			.thenReturn(new ArrayList<>());
 		mockMvc.perform(get(REQUEST_MAPPING + getMapping).contentType(APPLICATION_JSON))
@@ -55,7 +58,10 @@ public class CustomerControllerTest {
 	
 	@Test
 	public void itShouldGetCustomerById() throws Exception {
+		// Given
 		String getMapping = "/customers/1234";
+		
+		// Then
 		when(customerService.getCustomerById(anyString()))
 			.thenReturn(new CustomerDTO());
 		mockMvc.perform(get(REQUEST_MAPPING + getMapping).contentType(APPLICATION_JSON))
@@ -64,7 +70,10 @@ public class CustomerControllerTest {
 	
 	@Test
 	public void itShouldCreateNewCustomer() throws Exception {
+		// Given
 		String postMapping = "/customers";
+		
+		// Then
 		when(customerService.createCustomer(any(NewCustomerRequest.class)))
 			.thenReturn(new NewCustomerResponse());
 		mockMvc.perform(post(REQUEST_MAPPING + postMapping).content("{}").contentType(APPLICATION_JSON))
@@ -73,7 +82,10 @@ public class CustomerControllerTest {
 
 	@Test
 	public void itShouldUpdateCustomerById() throws Exception {
+		// Given
 		String putMapping = "/customers/1234";
+		
+		// Then
 		when(customerService.updateCustomerById(any(UpdateCustomerRequest.class), anyString()))
 			.thenReturn(new UpdateCustomerResponse());
 		mockMvc.perform(put(REQUEST_MAPPING + putMapping).content("{}").contentType(APPLICATION_JSON))
@@ -82,7 +94,10 @@ public class CustomerControllerTest {
 	
 	@Test
 	public void itShouldDeleteCustomerById() throws Exception {
+		// Given
 		String deleteMapping = "/customers/1234";
+		
+		// Then
 		doNothing()
 			.when(customerService)
 			.deleteCustomerById(anyString());

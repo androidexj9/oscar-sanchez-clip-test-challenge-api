@@ -31,7 +31,6 @@ import com.java.clip.challenge.api.dto.product.UpdateProductRequest;
 import com.java.clip.challenge.api.dto.product.UpdateProductResponse;
 import com.java.clip.challenge.api.exception.NotFoundException;
 import com.java.clip.challenge.api.model.Product;
-import com.java.clip.challenge.api.model.Product;
 import com.java.clip.challenge.api.repository.ProductRepository;
 import com.java.clip.challenge.api.validator.product.NewProductValidator;
 import com.java.clip.challenge.api.validator.product.UpdateProductValidator;
@@ -69,6 +68,7 @@ public class ProductServiceImplTest {
 		when(orikaMapperFacade.mapAsList(anyList(), any())).thenReturn(new ArrayList<>());
 		List<ProductDTO> testResult = productServiceImpl.getAllProducts();
 		
+		// Assertions
 		assertNotNull(testResult);
 	}
 	
@@ -80,6 +80,7 @@ public class ProductServiceImplTest {
 		when(orikaMapperFacade.map(any(), any())).thenReturn(new ProductDTO());
 		ProductDTO testResult = productServiceImpl.getProductById(anyString());
 		
+		// Assertions
 		assertNotNull(testResult);
 	}
 
@@ -89,6 +90,7 @@ public class ProductServiceImplTest {
 		when(productRepository.findById(anyString())).thenReturn(Optional.empty());
 		NotFoundException thrownException = assertThrows(NotFoundException.class, () -> productServiceImpl.getProductById(anyString()));
 		
+		// Assertions
 		assertEquals(String.format(NOT_FOUND_RESOURCE, PRODUCT, ""), thrownException.getMessage());
 	}
 	
@@ -115,6 +117,7 @@ public class ProductServiceImplTest {
 		when(productRepository.save(any())).thenReturn(new Product());
 		when(orikaMapperFacade.map(any(Product.class), any())).thenReturn(new NewProductResponse());
 		
+		// Assertions
 		assertNotNull(productServiceImpl.createProduct(newProductRequest));
 	}
 	
@@ -134,6 +137,7 @@ public class ProductServiceImplTest {
 		when(productRepository.save(any())).thenReturn(new Product());
 		when(orikaMapperFacade.map(any(Product.class), any())).thenReturn(new UpdateProductResponse());
 		
+		// Assertions
 		assertNotNull(productServiceImpl.updateProductById(new UpdateProductRequest(), ""));
 	}
 	
@@ -145,6 +149,7 @@ public class ProductServiceImplTest {
 		doNothing().when(productRepository).deleteById(anyString());
 		productServiceImpl.deleteProductById(anyString());
 		
+		// Assertions
 		verify(productRepository).deleteById(anyString());
 	}
 
@@ -155,6 +160,7 @@ public class ProductServiceImplTest {
 		doNothing().when(productRepository).deleteById(anyString());
 		NotFoundException thrownException = assertThrows(NotFoundException.class, () -> productServiceImpl.deleteProductById(anyString()));
 		
+		// Assertions
 		assertEquals(String.format(NOT_FOUND_RESOURCE, PRODUCT, ""), thrownException.getMessage());
 	}
 }

@@ -46,7 +46,10 @@ public class ProductControllerTest {
 
 	@Test
 	public void itShouldGetAllProducts() throws Exception {
+		// Given
 		String getMapping = "/products";
+		
+		// Then
 		when(productService.getAllProducts())
 			.thenReturn(new ArrayList<>());
 		mockMvc.perform(get(REQUEST_MAPPING + getMapping).contentType(APPLICATION_JSON))
@@ -55,7 +58,10 @@ public class ProductControllerTest {
 	
 	@Test
 	public void itShouldGetProductById() throws Exception {
+		// Given
 		String getMapping = "/products/1234";
+		
+		// Then
 		when(productService.getProductById(anyString()))
 			.thenReturn(new ProductDTO());
 		mockMvc.perform(get(REQUEST_MAPPING + getMapping).contentType(APPLICATION_JSON))
@@ -64,7 +70,10 @@ public class ProductControllerTest {
 	
 	@Test
 	public void itShouldCreateNewProduct() throws Exception {
+		// Given
 		String postMapping = "/products";
+		
+		// Then
 		when(productService.createProduct(any(NewProductRequest.class)))
 			.thenReturn(new NewProductResponse());
 		mockMvc.perform(post(REQUEST_MAPPING + postMapping).content("{}").contentType(APPLICATION_JSON))
@@ -73,7 +82,10 @@ public class ProductControllerTest {
 
 	@Test
 	public void itShouldUpdateProductById() throws Exception {
+		// Given
 		String putMapping = "/products/1234";
+		
+		// Then
 		when(productService.updateProductById(any(UpdateProductRequest.class), anyString()))
 			.thenReturn(new UpdateProductResponse());
 		mockMvc.perform(put(REQUEST_MAPPING + putMapping).content("{}").contentType(APPLICATION_JSON))
@@ -82,7 +94,10 @@ public class ProductControllerTest {
 	
 	@Test
 	public void itShouldDeleteProductById() throws Exception {
+		// Given
 		String deleteMapping = "/products/1234";
+		
+		// Then
 		doNothing()
 			.when(productService)
 			.deleteProductById(anyString());

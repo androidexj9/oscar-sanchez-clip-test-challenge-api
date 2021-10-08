@@ -72,6 +72,7 @@ public class CustomerServiceImplTest {
 		when(orikaMapperFacade.mapAsList(anyList(), any())).thenReturn(new ArrayList<>());
 		List<CustomerDTO> testResult = customerServiceImpl.getAllCustomers();
 		
+		// Assertions
 		assertNotNull(testResult);
 	}
 	
@@ -83,6 +84,7 @@ public class CustomerServiceImplTest {
 		when(orikaMapperFacade.map(any(), any())).thenReturn(new CustomerDTO());
 		CustomerDTO testResult = customerServiceImpl.getCustomerById(anyString());
 		
+		// Assertions
 		assertNotNull(testResult);
 	}
 
@@ -92,6 +94,7 @@ public class CustomerServiceImplTest {
 		when(customerRepository.findById(anyString())).thenReturn(Optional.empty());
 		NotFoundException thrownException = assertThrows(NotFoundException.class, () -> customerServiceImpl.getCustomerById(anyString()));
 		
+		// Assertions
 		assertEquals(String.format(NOT_FOUND_RESOURCE, CUSTOMER, ""), thrownException.getMessage());
 	}
 	
@@ -121,6 +124,7 @@ public class CustomerServiceImplTest {
 		when(customerRepository.save(any())).thenReturn(new Customer());
 		when(orikaMapperFacade.map(any(Customer.class), any())).thenReturn(new NewCustomerResponse());
 		
+		// Assertions
 		assertNotNull(customerServiceImpl.createCustomer(newCustomerRequest));
 	}
 	
@@ -140,6 +144,7 @@ public class CustomerServiceImplTest {
 		when(customerRepository.save(any())).thenReturn(new Customer());
 		when(orikaMapperFacade.map(any(Customer.class), any())).thenReturn(new UpdateCustomerResponse());
 		
+		// Assertions
 		assertNotNull(customerServiceImpl.updateCustomerById(new UpdateCustomerRequest(), ""));
 	}
 	
@@ -151,6 +156,7 @@ public class CustomerServiceImplTest {
 		doNothing().when(customerRepository).deleteById(anyString());
 		customerServiceImpl.deleteCustomerById(anyString());
 		
+		// Assertions
 		verify(customerRepository).deleteById(anyString());
 	}
 
@@ -161,6 +167,7 @@ public class CustomerServiceImplTest {
 		doNothing().when(customerRepository).deleteById(anyString());
 		NotFoundException thrownException = assertThrows(NotFoundException.class, () -> customerServiceImpl.deleteCustomerById(anyString()));
 		
+		// Assertions
 		assertEquals(String.format(NOT_FOUND_RESOURCE, CUSTOMER, ""), thrownException.getMessage());
 	}
 }
